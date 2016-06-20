@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: 'src',
 					dest: 'dest',
-					src: ['*_improved.html']
+					src: ['*_improved.html', 'views/*_improved.html']
 				}]
 			}
 		},
@@ -96,6 +96,7 @@ module.exports = function(grunt) {
 						'dest/project-2048.html': 'dest/project-2048_improved.html',
 						'dest/project-mobile.html': 'dest/project-mobile_improved.html',
 						'dest/project-webperf.html': 'dest/project-webperf_improved.html',
+						'dest/views/pizza.html': 'dest/views/pizza_improved.html',
 
 						'dest/js/perfmatters.js': 'dest/js/perfmatters_improved.js',
 
