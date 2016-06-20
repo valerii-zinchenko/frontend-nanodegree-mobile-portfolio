@@ -14,6 +14,10 @@ The following techniques were applied to reduce the CRP and improve the site loa
 * Run all JavaScripts at the end of document's body
 * Download fonts and GA stuff asynchronusly from JavaScript at the end of the body after all critical JavaScript routines
 * Optimize images for different screen sizes and media qieries (nice example: [pizza.html](http://valerii-zinchenko.github.io/frontend-nanodegree-mobile-portfolio/dest/views/pizza.html))
+ 
+For today (21.06.2016) [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fvalerii-zinchenko.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fdest%2Findex.html&tab=mobile) displays:
+* 95 / 100 for mobile
+* 97 / 100 for desktop
 
 ### Part 2: Optimize Frames per Second in pizza.html
 
