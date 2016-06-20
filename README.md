@@ -1,5 +1,10 @@
 ## Website Performance Optimization portfolio project
 
+### Live links
+
+* [`src`](http://valerii-zinchenko.github.io/frontend-nanodegree-mobile-portfolio/src/index.html)
+* [`dest`](http://valerii-zinchenko.github.io/frontend-nanodegree-mobile-portfolio/dest/index.html)
+
 ### Part 1: Optimize PageSpeed Insights score for index.html
 
 The following techniques were applied to reduce the CRP and improve the site loading:
@@ -8,7 +13,7 @@ The following techniques were applied to reduce the CRP and improve the site loa
 * Inline critical and small CSS and JS files into HTML file
 * Run all JavaScripts at the end of document's body
 * Download fonts and GA stuff asynchronusly from JavaScript at the end of the body after all critical JavaScript routines
-* Optimize images for different screen sizes and media qieries (nice example: [pizza.html])
+* Optimize images for different screen sizes and media qieries (nice example: [pizza.html](http://valerii-zinchenko.github.io/frontend-nanodegree-mobile-portfolio/dest/views/pizza.html))
 
 ### Part 2: Optimize Frames per Second in pizza.html
 
