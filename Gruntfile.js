@@ -99,6 +99,7 @@ module.exports = function(grunt) {
 						'dest/views/pizza.html': 'dest/views/pizza_improved.html',
 
 						'dest/js/perfmatters.js': 'dest/js/perfmatters_improved.js',
+						'dest/views/js/main.js': 'dest/views/js/main_fixed.js',
 
 						'dest/img/2048.png': 'dest/img/2048-origin.png',
 						'dest/img/cam_be_like.jpg': 'dest/img/cam_be_like-origin.jpg',

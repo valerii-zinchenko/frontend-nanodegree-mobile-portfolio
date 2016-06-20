@@ -15,6 +15,7 @@ Creator:
 Cameron Pittman, Udacity Course Developer
 cameron *at* udacity *dot* com
 */
+'use strict';
 
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
@@ -501,10 +502,16 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
+  // Calculate all pases before the loop of updating the styles
+  var phases = [];
+  var top = document.body.scrollTop / 1250;
+  for (var ii = 0; ii < items.length; ii++) {
+    phases.push(100 * Math.sin(top + (ii % 5)));
+  }
+
+  // Update styles
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    items[i].style.left = items[i].basicLeft + phases[i] + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -516,6 +523,8 @@ function updatePositions() {
     logAverageFrame(timesToUpdatePosition);
   }
 }
+
+var items = [];
 
 // runs updatePositions on scroll
 window.addEventListener('scroll', updatePositions);
@@ -533,6 +542,8 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
+
+	items.push(elem);
   }
   updatePositions();
 });
