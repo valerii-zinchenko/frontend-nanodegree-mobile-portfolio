@@ -31,8 +31,10 @@ The problem was that by changing the size of the pizza the content update took a
 * unnecessary access ot the element's styles in loops
 * lot of code duplication
 * unnecessary creation of function inside of this function
+* the amount of computations with modulus operator was reduced (modulus operator is used by accessing the precalculated value only)
+* by resizing the control of the pizza size is moved to CSS, in JavaSCript file only proper class is selected and set to the main container
 
-Before the fix, it was about 300ms on mt laptop, after - 3-4ms.
+Before the fix, it was about 150ms by scrolling and 300ms for resizing on mt laptop, after - <1ms for both.
 
 Great improvements, I would say. Now pizza.html is much more smother than before :)
 
