@@ -374,8 +374,6 @@ var pizzaElementGenerator = function(i) {
   pizzaDescriptionContainer = document.createElement("div");
 
   pizzaContainer.classList.add("randomPizzaContainer");
-  pizzaContainer.style.width = "33.33%";
-  pizzaContainer.style.height = "325px";
   pizzaContainer.id = "pizza" + i;                // gives each pizza element a unique id
   pizzaImageContainer.classList.add("col-md-6");
 
@@ -402,7 +400,7 @@ var pizzaElementGenerator = function(i) {
 var sizeConfig = {
 	1: {
 		size: 0.25,
-		label: 'Sall'
+		label: 'Small'
 	},
 	2: {
 		size: 0.3333,
@@ -422,21 +420,12 @@ var resizePizzas = function(size) {
 
   // Changes the value for the size of the pizza above the slider
   if (size in sizeConfig) {
-    document.querySelector("#pizzaSize").innerHTML = sizeConfig[size].label;
+    var name = sizeConfig[size].label;
+    document.querySelector("#pizzaSize").innerHTML = name;
+    pizzaContainer.classList = 'row ' + name.toLowerCase();
   } else {
     console.log("unknown size");
     return;
-  }
-
-  var windowWidth = pizzaContainer.offsetWidth;
-
-  // Iterates through pizza elements on the page and changes their widths
-  var items = document.querySelectorAll(".randomPizzaContainer");
-  var oldWidth = items[0].offsetWidth;
-  var oldSize = oldWidth / windowWidth;
-  var dx = (sizeConfig[size].size - oldSize) * windowWidth;
-  for (var i = 0; i < items.length; i++) {
-    items[i].style.width = (oldWidth + dx) + 'px';
   }
 
   // User Timing API is awesome
