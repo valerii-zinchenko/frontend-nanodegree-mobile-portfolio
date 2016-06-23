@@ -478,13 +478,13 @@ function updatePositions() {
   // Calculate all pases before the loop of updating the styles
   var phases = [];
   var top = document.body.scrollTop / 1250;
-  for (var ii = 0; ii < 5; ii++) {
-    phases.push(100 * Math.sin(top + ii));
+  for (var i = 0; i < 5; i++) {
+    phases.push(100 * Math.sin(top + i));
   }
 
   // Update styles
-  for (var i = 0; i < items.length; i++) {
-    items[i].style.left = items[i].basicLeft + phases[i % 5] + 'px';
+  for (i = 0; i < items.length; i++) {
+    items[i].style.left = (items[i].basicLeft + phases[i % 5]) + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -505,7 +505,7 @@ window.addEventListener('scroll', updatePositions);
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
-  var cols = Math.ceil(window.innerWidth / s);
+  var cols = 8;
   var maxPizzaRows = Math.ceil(window.innerHeight / s);
   var elem;
   for (var i = 0; i < maxPizzaRows * cols; i++) {
